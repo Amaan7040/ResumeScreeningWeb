@@ -60,7 +60,7 @@ def get_db_connection(db_name):
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password="amaan@khan704093",
+        password="", #put your own mysql password
         database=db_name,
         auth_plugin="mysql_native_password"
     )
