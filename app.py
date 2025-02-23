@@ -55,9 +55,7 @@ abbreviation_map = {
 }
 
 # Database Connection
-DB_NAME = "resume_screening_db"
-
-def get_db_connection():
+def get_db_connection(DB_NAME):
     """Establishes and returns a connection to the MySQL database."""
     return mysql.connector.connect(
         host="localhost",
@@ -123,7 +121,7 @@ def process_resume(file):
 
 def compare_skills(predicted_job, extracted_skills, user_name):
     try:
-        conn = get_db_connection()
+        conn = get_db_connection("resume_screening_db")
         cursor = conn.cursor(dictionary=True)
         
         # Fetch required skills for the predicted job
